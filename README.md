@@ -22,57 +22,57 @@ The **FSHIP Project** is a web application designed to generate shipping labels 
 
 ### Frontend
 - **React.js**
-- **Axios** for API requests.
-- **Tailwind CSS** for styling.
+- **Axios** for API requests
+- **Tailwind CSS** for styling
 
 ### Backend
 - **Express.js**
-- **Axios** for making requests to the FSHIP API.
-- **CORS** for enabling cross-origin requests.
+- **Axios** for making requests to the FSHIP API
+- **CORS** for enabling cross-origin requests
 
 ### Deployment
-- **Vercel** for frontend deployment.
-- **Render** for backend deployment.
+- **Vercel** for frontend deployment
+- **Render** for backend deployment
 
 ---
 
 ## Installation
 
-To set up the project locally, follow these steps:
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/swaraj29/FSHIP.git
-   cd FSHIP
-Install Dependencies:
+### Clone the Repository
+```bash
+git clone https://github.com/swaraj29/FSHIP.git
+cd FSHIP
+Install Dependencies
 npm install
-Set Up Environment Variables:
-
-For the backend, create a .env file in the root directory and add the following:
-# Backend Configuration
+Set Up Environment Variables
+Backend
+Create a .env file in the root directory and add the following:
 CLIENT_URL=https://fship-three.vercel.app
 PORT=3000
-For the frontend, create a .env file in the root directory and add the following:
-Run the Development Server:
-For the backend:
+Frontend
+Create a .env file in the root directory for any required frontend configuration.
+
+Run the Development Server
+Backend
 node index.js
-For the frontend:
+Frontend
 npm run dev
-Access the Application:
 
+
+Access the Application
 Frontend: http://localhost:5173
-
 Backend: http://localhost:3000
-
 Generating a Waybill
-To generate a waybill, hit the following API endpoint:
+To generate a waybill, use the following API endpoint:
 
 API Endpoint
 POST https://fship.onrender.com/api/create-forward-order
 
 Request Body
-
 Send the following data in JSON format:
+
+json
+Copy code
 {
   "customer_Name": "John Doe",
   "customer_Mobile": "9876543210",
@@ -116,9 +116,10 @@ Send the following data in JSON format:
   "courierId": 9
 }
 Response
-If the request is successful, the API will return:
+If successful, the API returns:
 
 json
+Copy code
 {
   "route_code": "",
   "order_status": "success",
@@ -128,26 +129,15 @@ json
   "response": "Order placed successfully"
 }
 Testing Waybill Numbers
-For testing purposes, use the following waybill numbers:
+Use the following test waybill numbers:
 
 FSPC0004288709
-
 FSPC0004288710
-
 FSPC0004288711
-
 FSPC0004288712
-
 FSPC0004288713
-
-Public URLs for Testing
-Frontend Deployed Link: https://fship-three.vercel.app/
-
-Backend Deployed Link: https://fship.onrender.com
-Public URLs for Testing
-Frontend Deployed Link: https://fship-three.vercel.app/
-
-Backend Deployed Link: https://fship.onrender.com
+Public URLs
+Frontend: https://fship-three.vercel.app/
+Backend: https://fship.onrender.com
 Conclusion
-The FSHIP Project provides an efficient solution for generating shipping labels by integrating with a backend API. The application is designed for easy setup and usage, with an intuitive interface and modern web technologies. It is deployed on Vercel (frontend) and Render (backend) for public access.
-
+The FSHIP Project provides an efficient solution for generating shipping labels by integrating with a backend API. Designed for ease of use, the application features an intuitive interface and utilizes modern web technologies. It is deployed on Vercel (frontend) and Render (backend) for public access.
