@@ -1,68 +1,75 @@
-# FSHIP Project
+# **FSHIP Project**
 
 The **FSHIP Project** is a web application designed to generate shipping labels by integrating with a backend API. Users can input a waybill number to fetch and display shipping details, including dimensions, weight, payment status, and product information. Built with **React.js** (frontend) and **Express.js** (backend), the application is designed for ease of use and efficient setup.
 
 ---
 
-## Features
+## **Features**
 
-- **Shipping Label Generation**:
+- 📦 **Shipping Label Generation**:
   - Fetch shipping details using a waybill number.
-  - Display shipment details, including dimensions, weight, and payment status.
+  - Display shipment details: dimensions, weight, and payment status.
   - Show product details, including quantity, price, and taxes.
-- **User-Friendly Interface**:
+- 🌟 **User-Friendly Interface**:
   - Simple and intuitive form for entering the waybill number.
   - Clear display of shipping label details.
-- **Error Handling**:
+- 🚨 **Error Handling**:
   - Display error messages for invalid waybill numbers or API failures.
 
 ---
 
-## Technologies Used
+## **Technologies Used**
 
-### Frontend
-- **React.js**
-- **Axios** for API requests
-- **Tailwind CSS** for styling
+### **Frontend**
+- ⚛️ **React.js**
+- 🌐 **Axios** for API requests.
+- 🎨 **Tailwind CSS** for styling.
 
-### Backend
-- **Express.js**
-- **Axios** for making requests to the FSHIP API
-- **CORS** for enabling cross-origin requests
+### **Backend**
+- 🌟 **Express.js**
+- 🌐 **Axios** for making requests to the FSHIP API.
+- 🔐 **CORS** for enabling cross-origin requests.
 
-### Deployment
-- **Vercel** for frontend deployment
-- **Render** for backend deployment
+### **Deployment**
+- 🚀 **Vercel** for frontend deployment.
+- 🚀 **Render** for backend deployment.
 
 ---
 
-## Installation
+## **Setup and Installation**
 
-### Clone the Repository
+Follow these steps to set up the project locally:
+
+### **1. Clone the Repository**
 ```bash
 git clone https://github.com/swaraj29/FSHIP.git
 cd FSHIP
-Install Dependencies
+
+**2.Install Dependencies
 npm install
-Set Up Environment Variables
+
+**3.Set Up Environment Variables
 Backend
 Create a .env file in the root directory and add the following:
+
 CLIENT_URL=https://fship-three.vercel.app
 PORT=3000
+
 Frontend
 Create a .env file in the root directory for any required frontend configuration.
 
-Run the Development Server
+**4.Run the Development Server
 Backend
 node index.js
 Frontend
 npm run dev
 
 
-Access the Application
+**5.Access the Application
 Frontend: http://localhost:5173
 Backend: http://localhost:3000
-Generating a Waybill
+
+**6.Generating a Waybill
 To generate a waybill, use the following API endpoint:
 
 API Endpoint
@@ -137,7 +144,11 @@ FSPC0004288711
 FSPC0004288712
 FSPC0004288713
 Public URLs
+
 Frontend: https://fship-three.vercel.app/
 Backend: https://fship.onrender.com
+
 Conclusion
-The FSHIP Project provides an efficient solution for generating shipping labels by integrating with a backend API. Designed for ease of use, the application features an intuitive interface and utilizes modern web technologies. It is deployed on Vercel (frontend) and Render (backend) for public access.
+The FSHIP Project provides an efficient solution for generating shipping labels by integrating with a backend API.
+ Designed for ease of use, the application features an intuitive interface and utilizes modern web technologies.
+ It is deployed on Vercel (frontend) and Render (backend) for public access.
