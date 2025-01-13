@@ -25,7 +25,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/shipping-label",
+        `${import.meta.env.VITE_BACKEND_URL}/api/shipping-label`,
         { waybill }
       );
 
