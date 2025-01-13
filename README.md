@@ -79,7 +79,6 @@ Request Body
 Send the following data in JSON format:
 
 json
-Copy code
 {
   "customer_Name": "John Doe",
   "customer_Mobile": "9876543210",
@@ -125,7 +124,6 @@ Copy code
 Response
 If successful, the API returns:
 
-json
 Copy code
 {
   "route_code": "",
