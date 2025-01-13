@@ -1,14 +1,20 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
 const app = express();
 
 // Enable CORS for frontend-backend communication
-app.use(cors());
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL || "https://fship-three.vercel.app", // Allow requests from the frontend
+    credentials: true,
+  })
+);
 app.use(express.json());
 
-const FSHIP_API_URL = 'https://capi-qc.fship.in';
-const FSHIP_API_KEY = '085c36066064af83c66b9dbf44d190d40feec79f437bc1c1cb';
+const FSHIP_API_URL = process.env.FSHIP_API_URL;
+const FSHIP_API_KEY = process.env.FSHIP_API_KEY;
 
 // 1. Get Courier List
 app.get('/api/couriers', async (req, res) => {
@@ -37,10 +43,11 @@ app.post('/api/warehouses', async (req, res) => {
         });
         res.json(response.data);
     } catch (error) {
-        // console.error('Error:', error.response ? error.response.data : error.message); // Log the error
         res.status(500).json({ error: 'Failed to add warehouse' });
     }
 });
+
+// 3. Update Warehouse
 app.post('/api/update-warehouse', async (req, res) => {
     console.log('Request Body:', req.body); // Log the request body
     try {
@@ -56,6 +63,8 @@ app.post('/api/update-warehouse', async (req, res) => {
         res.status(500).json({ error: 'Failed to update warehouse' });
     }
 });
+
+// 4. Create Forward Order
 app.post('/api/create-forward-order', async (req, res) => {
     console.log('Request Payload:', req.body); // Log the request payload
     try {
@@ -84,7 +93,6 @@ app.post('/api/shipping-label', async (req, res) => {
         });
         res.json(response.data);
     } catch (error) {
-
         res.status(500).json({ error: 'Failed to fetch shipping label' });
     }
 });
@@ -210,4 +218,5 @@ app.post('/api/reattempt-order', async (req, res) => {
 });
 
 // Start the server
-app.listen(3000, () => console.log('Backend running on http://localhost:3000'));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Backend running on http://localhost:${PORT}`));
