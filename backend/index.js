@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv').config(); // Load environment variables from .env file
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
@@ -13,8 +13,9 @@ app.use(
 );
 app.use(express.json());
 
-const FSHIP_API_URL = process.env.FSHIP_API_URL;
-const FSHIP_API_KEY = process.env.FSHIP_API_KEY;
+// Hardcoded FSHIP API URL and Key
+const FSHIP_API_URL = 'https://capi-qc.fship.in';
+const FSHIP_API_KEY = '085c36066064af83c66b9dbf44d190d40feec79f437bc1c1cb';
 
 // 1. Get Courier List
 app.get('/api/couriers', async (req, res) => {
